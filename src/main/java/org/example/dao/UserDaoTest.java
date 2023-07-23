@@ -20,7 +20,7 @@ public class UserDaoTest {
         User user = new User();
         user.setId("spring");
         user.setName("books");
-        user.setPassword("password123");
+        user.setPassword("password");
 
         dao.add(user);
 

@@ -14,17 +14,8 @@ public class UserDao {
         this.connectionMaker = simpleConnectionMaker;
     }
 
-    /** DataSource 를 사용한 인터페이스로 전환시 밑의 주석을 풀고 위의 코드를 주석 처리 한다*/
-//	private DataSource dataSource;
-//
-//	public void setDataSource(DataSource dataSource) {
-//		this.dataSource = dataSource;
-//	}
-
     public void add(User user) throws ClassNotFoundException, SQLException {
         Connection c = this.connectionMaker.makeConnection();
-        //DataSource 인터페이스 사용시 아래의 커넥션을 이용한다.
-//		Connection c = dataSource.getConnection();
 
         PreparedStatement ps = c
                 .prepareStatement("insert into users(id, name, password) values(?,?,?)");
