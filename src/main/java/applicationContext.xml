@@ -21,10 +21,12 @@
     <!-- 아래의 설정은 DataSource 인터페이스 전환시 사용되는 설정입니다.
         DataSource 인터페이스 사용시 아래 코드의 주석을 풀고 위 코드를 주석 처리 하세요. -->
     <bean id="dataSource" class="org.springframework.jdbc.datasource.SimpleDriverDataSource">
-        <property name="driverClass" value="com.mysql.jdbc.Driver" />
-        <property name="url" value="jdbc:mysql://your.dbserver.org:3306/springbook?characterEncoding=UTF-8" />
-        <property name="username" value="yourID" />
-        <property name="password" value="yourPASS" />
+        <property name="url" value="oracle.jdbc.driver.OracleDriver" />
+        <property name="username" value="system" />
+        <property name="password" value="oracle" />
+        <property name="initialSize" value="5"/>
+        <property name="maxActive" value="5"/>
+        <property name="validationQuery" value="1"/>
     </bean>
 
     <bean id="userDao" class="org.example.dao.UserDao">

@@ -7,9 +7,9 @@ import java.sql.SQLException;
 public class DConnectionMaker implements ConnectionMaker {
     public Connection makeConnection() throws ClassNotFoundException,
             SQLException {
-        Class.forName("com.mysql.jdbc.Driver");
+        Class.forName("oracle.jdbc.driver.OracleDriver");
         Connection c = DriverManager.getConnection(
-                "jdbc:mysql://your.dbserver.com:3306/springbook?characterEncoding=UTF-8", "yourID", "yourPASS");
+                "jdbc:oracle:thin:@localhost:1521:XE", "system", "oracle");
         return c;
     }
 }
